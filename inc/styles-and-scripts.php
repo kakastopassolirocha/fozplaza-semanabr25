@@ -1,6 +1,7 @@
 <?php
 add_action( 'wp_enqueue_scripts', function(){
-    wp_enqueue_style('fozplaza', THEMEROOT_DIST .'css/fozplaza-css.min.css', [], '1.0.0');
+    wp_enqueue_style('fozplaza-tailwind', THEMEROOT_DIST .'css/tailwind.css', [], '1.0.0');
+    wp_enqueue_style('fozplaza', THEMEROOT_DIST .'css/fozplaza-css.min.css', ['fozplaza-tailwind'], '1.0.0');
 
     // Trata e comprime SVG em uma tag de <img>
     wp_enqueue_script( 'svg-inject', THEMEROOT_DIST . 'js/libs/svg-inject.min.js', [], '1.2.3', false);

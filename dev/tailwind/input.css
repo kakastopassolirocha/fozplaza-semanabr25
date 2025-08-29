@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Animação suave para a arara (tucano) - voando no próprio espaço sem sair da área
+	 - keyframes 'arara-fly' usa pequenas traduções em X e Y e uma leve rotação
+	 - classe utilitária .arara-flying aplica a animação e mantém transform-origin no centro
+	 - respeita prefers-reduced-motion
+	 - colocamos em @layer utilities para integrar com Tailwind v4.1
+*/
+
+@layer utilities {
+    @keyframes arara-fly {
+
+        /* 0% {
+            transform: translate(0px, 0px) rotate(0deg);
+        }
+
+        25% {
+            transform: translate(6px, -6px) rotate(-3deg);
+        }
+
+        50% {
+            transform: translate(0px, -10px) rotate(0deg);
+        }
+
+        75% {
+            transform: translate(-6px, -6px) rotate(3deg);
+        }
+
+        100% {
+            transform: translate(0px, 0px) rotate(0deg);
+        } */
+
+        0% {
+            transform: translatey(0px);
+        }
+
+        50% {
+            transform: translatey(-20px) translatex(10px);
+        }
+
+        100% {
+            transform: translatey(0px);
+        }
+    }
+
+    .arara-flying {
+        /* display: inline-block;
+        transform-origin: 50% 50%; */
+        animation: arara-fly 4.5s ease-in-out infinite;
+        /* will-change: transform; */
+    }
+
+    /* versão mais lenta e sutil se precisar */
+    .arara-flying--slow {
+        animation-duration: 7s;
+    }
+
+    /* Respeitar preferência por reduzir movimento */
+    @media (prefers-reduced-motion: reduce) {
+
+        .arara-flying,
+        .arara-flying--slow {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+}

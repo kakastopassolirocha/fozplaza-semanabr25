@@ -9,8 +9,8 @@ get_header();
 <main class="home-hero"
     x-data="{ isMuted: true }" x-intersect:enter="$refs.video.play()" x-intersect:leave="$refs.video.pause()">
     <div class="video-background" style="background-image:url('<?=the_field('background_hero')?>')">
-        <img src="<?=THEMEROOT_DEV?>img/faixa-bf_top.png" class="faixa top">
-        <img src="<?=THEMEROOT_DEV?>img/faixa-bf_bottom.png" class="faixa bottom">
+        <!-- <img src="<?=THEMEROOT_DEV?>img/faixa-bf_top.png" class="faixa top">
+        <img src="<?=THEMEROOT_DEV?>img/faixa-bf_bottom.png" class="faixa bottom"> -->
 
         <?php
         // Verifica se existe o vídeo "video_hero"
@@ -31,21 +31,21 @@ get_header();
         <?php endif; ?>
     </div><!-- .video-background -->
 
-    <div class="overlay">
-        <div class="content">
-            <h1 class="logo">
+    <div class="overlay size-full">
+        <div class="content !size-full !flex !flex-col align-items-center justify-center">
+            <!-- <h1 class="logo mx-auto flex justify-center">
                 <img src="<?=THEMEROOT_DIST?>svg/logo-fozplaza_white.svg" alt="Foz Plaza Hotel"
                     onload="SVGInject(this)">
-            </h1>
-            <h2 class="logo-black">
-                <img src="<?=THEMEROOT_DIST?>svg/logo_black-friday_foz-plaza.svg" alt="Semana Brasil 2025 - 15% OFF"
-                    onload="SVGInject(this)">
+            </h1> -->
+            <h2 class="logo-black flex justify-center relative">
+                <img class="logo-img w-[520px]"
+                    src="<?=THEMEROOT_DIST?>svg/semana-brasil_sem-arara.svg" alt="Semana Brasil 2025 - 15% OFF" />
+                <img class="absolute transform translate-x-56 translate-y-14 arara-flying"
+                    src="<?=THEMEROOT_DIST?>img/arara.png" alt="Arara - Cataratas do Iguaçu - Foz do Iguaçu" />
             </h2>
-            <div class="stamps">
-                <img src="<?=THEMEROOT_DIST?>svg/periodo-vendas.svg" alt="Vendas de 25/11 a 01/12"
-                    onload="SVGInject(this)">
-                <img src="<?=THEMEROOT_DIST?>svg/periodo-hospedagem.svg" alt="Vendas de 25/11 a 01/12"
-                    onload="SVGInject(this)">
+            <div class="flex justify-center !mt-16">
+                <img class="w-[320px]"
+                    src="<?=THEMEROOT_DIST?>img/periodo-de-vendas.png" alt="Vendas de 05 a 11 de Setembro" />
             </div>
         </div><!-- .content -->
     </div><!-- .overlay -->
@@ -72,161 +72,19 @@ get_header();
                 <h6>Segundos</h6>
             </div>
         </div><!-- .timer -->
-        <h3 class="maior-oferta">Para a maior oferta do ano!</h3>
+        <h3 class="maior-oferta">Para você poder aproveitar!</h3>
     </div><!-- .container-screen -->
     <a name="cadastrar" class="anchor-link" data-scroll-offset="70"></a>
 </section><!-- .countdown -->
 
-<dialog id="modal-success" class="modal-success">
-    <div class="lottie-success" id="lottie-success"></div>
-    <h3 class="tit">Uhuuu <span class="name"></span>,</h3>
-    <h4 class="sub">agora você é VIP na Black do Foz Plaza 😎</h4>
-    <h5 class="apoio">Seu cadastro foi realizado com sucesso!</h5>
-    <p class="txt">
-        Enviaremos no seu email e whatsapp todas as informações sobre a <strong>Black Friday Foz Plaza</strong>,
-        inclusive o código
-        secreto
-        para ganhar super descontos, fica de olho 👀, combinado?!
-    </p>
-    <div class="footer">
-        <button class="btn-main close-modal"><span class="label">Entendido!</label></button>
-    </div>
-</dialog>
-
 <article class="participe">
     <div class="container-screen padding-x">
-        <h6 class="overline">🚨 Serão apenas 350 reservas</h6>
-        <h2 class="tit">Participe Agora</h2>
+        <h6 class="overline-item">🚨 Serão apenas 350 reservas</h6>
+        <h2 class="tit">Fique de olho, não perca!</h2>
         <h3 class="sub"><strong>Cadastre-se para participar</strong> e receber o código secreto<br>para a <strong>maior
                 promoção
                 da história!</strong>
         </h3>
-
-        <div class="form-cadastro">
-            <div class="input-box nome">
-                <input class="input icon-nome" required autocomplete="name" type="text" name="nome" id="nome">
-                <label class="label" for="nome">Seu Nome</label>
-                <span class="error-msg">Informe seu nome</span>
-                <span class="i-error"></span>
-                <span class="i-ok"></span>
-            </div>
-            <div class="input-box email">
-                <input class="input icon-email" required autocomplete="email" type="text" name="email" id="email">
-                <label class="label" for="email">Email</label>
-                <span class="error-msg">Email inválido</span>
-                <span class="i-error"></span>
-                <span class="i-ok"></span>
-            </div>
-            <div class="input-box ddd">
-                <select class="input" name="ddd" id="ddd" required>
-                    <option value=""></option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="24">24</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="31">31</option>
-                    <option value="32">32</option>
-                    <option value="33">33</option>
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                    <option value="45">45</option>
-                    <option value="46">46</option>
-                    <option value="47">47</option>
-                    <option value="48">48</option>
-                    <option value="49">49</option>
-                    <option value="51">51</option>
-                    <option value="53">53</option>
-                    <option value="54">54</option>
-                    <option value="55">55</option>
-                    <option value="61">61</option>
-                    <option value="62">62</option>
-                    <option value="63">63</option>
-                    <option value="64">64</option>
-                    <option value="65">65</option>
-                    <option value="66">66</option>
-                    <option value="67">67</option>
-                    <option value="68">68</option>
-                    <option value="69">69</option>
-                    <option value="71">71</option>
-                    <option value="73">73</option>
-                    <option value="74">74</option>
-                    <option value="75">75</option>
-                    <option value="77">77</option>
-                    <option value="79">79</option>
-                    <option value="81">81</option>
-                    <option value="82">82</option>
-                    <option value="83">83</option>
-                    <option value="84">84</option>
-                    <option value="85">85</option>
-                    <option value="86">86</option>
-                    <option value="87">87</option>
-                    <option value="88">88</option>
-                    <option value="89">89</option>
-                    <option value="91">91</option>
-                    <option value="92">92</option>
-                    <option value="93">93</option>
-                    <option value="94">94</option>
-                    <option value="95">95</option>
-                    <option value="96">96</option>
-                    <option value="97">97</option>
-                    <option value="98">98</option>
-                    <option value="99">99</option>
-                    <!-- Continue adicionando outras opções conforme necessário -->
-                </select>
-                <label class="label" for="ddd">DDD</label>
-                <span class="error-msg">Selecione o DDD</span>
-            </div>
-            <div class="input-box phone">
-                <input class="input icon-phone" required autocomplete="tel" type="tel" name="phone" id="phone"
-                    inputmode="numeric">
-                <label class="label" for="phone">Número Whatsapp</label>
-                <span class="error-msg">Digite o número Whatsapp</span>
-                <span class="i-error"></span>
-                <span class="i-ok"></span>
-            </div>
-            <div class="accepts">
-                <div class="accept">
-                    <input type="checkbox" name="accept-politicas" id="accept-politicas" required checked>
-                    <span class="error-msg">É necessário aceitar nossas políticas de privacidade para participar.</span>
-                    <label for="accept">
-                        Aceito receber comunicação por e-mail, SMS e/ou Whatsapp sobre produtos e
-                        serviços do Foz Plaza Hotel, conforme <a href="https://fozplaza.com.br/politicas-de-privacidade"
-                            target="_blank" class="external-link">políticas de
-                            privacidade</a>
-                    </label>
-                </div>
-                <div class="accept">
-                    <input type="checkbox" name="accept-condicoes" id="accept-condicoes" required checked>
-                    <span class="error-msg">É necessário aceitar as condições da promoção para participar.</span>
-                    <label for="accept">
-                        Li e concordo com as <a href="#condicoes" class="scroll-link">condições da promoção Foz Plaza
-                            Black Friday 2024</a>
-                    </label>
-                </div>
-            </div>
-            <div class="input-box submit">
-                <button id="btn-submit" class="btn-main" type="submit">
-                    <span class="label">Cadastrar</span>
-                    <div class="loader"></div>
-                </button>
-            </div>
-        </div><!-- .form-cadastro -->
     </div><!-- .container-screen -->
 </article><!-- participe -->
 

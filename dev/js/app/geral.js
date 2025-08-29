@@ -135,14 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
         item.querySelector("header").classList.remove("active");
         item.querySelector("div").style.height = "0px";
     });
-
-    // Garantir que o vídeo seja reproduzido automaticamente em dispositivos móveis
-    const video = document.querySelector('.bg-video');
-    if (video) {
-        video.play().catch(error => {
-            console.error('Erro ao reproduzir o vídeo:', error);
-        });
-    }
 });
 
 // * ACCORDION

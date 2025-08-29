@@ -2,115 +2,111 @@
 @use "tokens" as *;
 @use "sass:color";
 
-a#whatsapp-fixed
-{
-    position:fixed;
-    bottom:20px;
-    right:22px;
+a#whatsapp-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 22px;
     @include size(80px);
-    z-index:z("base");
+    z-index: z("base");
 
-    @include responsive(800px)
-    {
-        bottom:12px;
-        right:12px;
+    @include responsive(800px) {
+        bottom: 12px;
+        right: 12px;
         @include size(72px)
     }
-    @include responsive(560px)
-    {
-        bottom:8px;
-        right:8px;
+
+    @include responsive(560px) {
+        bottom: 8px;
+        right: 8px;
         @include size(64px)
     }
-    @include responsive(380px)
-    {
-        bottom:4px;
-        right:4px;
+
+    @include responsive(380px) {
+        bottom: 4px;
+        right: 4px;
         @include size(60px)
     }
 }
 
-header.header-home{
-    position:fixed;
-    width:100%;
-    z-index:z("menu");
+header.header-home {
+    position: fixed;
+    width: 100%;
+    z-index: z("menu");
     background: rgba(34, 34, 34, .1);
-    border-bottom:0.5px solid color.adjust($green-500, $alpha: -0.6);
+    border-bottom: 0.5px solid color.adjust($green-500, $alpha: -0.6);
     backdrop-filter: blur(4px);
 
-    .container-screen{
-        position:relative;
-        height:60px;
+    .container-screen {
+        position: relative;
+        height: 60px;
         @include flex(center, space-between);
-        color:$white;
+        color: $white;
         // @include py(16px);
         transition: all 0.5s ease;
-        
-        .logo
-        {
+
+        .logo {
             transform: scale(0.5);
         }
 
-        nav.menu{
-            ul, ol{
-                @include flex(center, center);
-                gap:24px;
-                list-style:none;
+        nav.menu {
 
-                li{
-                    a{
+            ul,
+            ol {
+                @include flex(center, center);
+                gap: 24px;
+                list-style: none;
+
+                li {
+                    a {
                         @include font-menu();
                         text-transform: uppercase;
-                        color:$white;
+                        color: $white;
                         transition: all 0.5s ease;
 
-                        &:hover{
-                            color:$green-400;
+                        &:hover {
+                            color: $yellow-500;
                         }
                     }
                 }
             }
         }
 
-        .tools
-        {
+        .tools {
             @include flex(center, center);
-            gap:12px;
+            gap: 12px;
 
-            .btn-login
-            {
+            .btn-login {
                 @include font-menu();
                 text-transform: uppercase;
-                border:1px solid $white;
-                border-radius:32px;
-                padding:8px 20px;
+                border: 1px solid $white;
+                border-radius: 32px;
+                padding: 8px 20px;
 
-                &::before
-                {
+                &::before {
                     content: "\f007";
                     font-family: "Font Awesome 6 Free";
                     font-weight: 500;
-                    font-size:80%;
-                    margin-right:8px;
+                    font-size: 80%;
+                    margin-right: 8px;
                 }
 
-                &:hover{
+                &:hover {
                     background: color.adjust($green-500, $lightness: 5%) !important;
                     border-color: transparent;
                 }
             }
-            .btn-reservar
-            {
+
+            .btn-reservar {
                 @include font-menu();
                 text-transform: uppercase;
-                color:#222;
-                padding:8px 20px;
-                border-radius:32px;
+                color: #222;
+                padding: 8px 20px;
+                border-radius: 32px;
                 background-color: color.adjust($yellow-500, $lightness: 15%);
-                transition:all 0.5s ease;
+                transition: all 0.5s ease;
 
-                position:relative;
-                z-index:2;
+                position: relative;
+                z-index: 2;
 
                 .label {
                     z-index: 3;
@@ -121,29 +117,31 @@ header.header-home{
                     position: absolute;
                     inset: 0;
                     border-radius: 32px;
-                    background:$yellow-500;
+                    background: $yellow-500;
                     z-index: 0;
                     animation: pulse-1 1250ms infinite;
                 }
 
-                &:hover{
-                    transform:scale(1.1);
+                &:hover {
+                    transform: scale(1.1);
                     background: color.adjust($yellow-500, $lightness: 20%) !important;
                     border-color: transparent;
                 }
             }
-        } //.tools
+        }
 
-        @include responsive(768px)
-        {
-            nav.menu{
-                display:none;
+        //.tools
+
+        @include responsive(768px) {
+            nav.menu {
+                display: none;
             }
         }
-    } // .container-screen
+    }
+
+    // .container-screen
 }
 
-body.inScroll header.header-home
-{
+body.inScroll header.header-home {
     background: rgba(34, 34, 34, .8);
 }

@@ -1,10 +1,10 @@
 <header class="header-home">
     <div class="wrapper">
         <div class="container-screen padding-x">
-            <div class="logo">
+            <div class="w-[220px]">
                 <a href="#" title="Foz Plaza Hotel">
-                    <img src="<?=THEMEROOT_DIST?>svg/logo-fozplaza_symbol-white.svg" alt="Foz Plaza Hotel"
-                        onload="SVGInject(this)">
+                    <img src="<?=THEMEROOT_DIST?>svg/logo-horizontal_white_sem-hotel.svg" alt="Foz Plaza Hotel"
+                        onload="SVGInject(this)" />
                 </a>
             </div><!-- .logo -->
 
@@ -23,7 +23,7 @@
                 </ul>
             </nav><!-- .menu -->
 
-            <div class="tools">
+            <div class="tools !hidden">
                 <?php /*<a href="#" title="Ofertas e Pacotes" class="btn-login">Entrar</a> */ ?>
                 <!-- <a href="#cadastrar" class="btn-reservar scroll-link" title="Reservar"
                     class="btn-reservar">Cadastre-se</a> -->

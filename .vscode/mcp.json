@@ -1,0 +1,44 @@
+{
+    "servers": {
+        "browser": {
+            "command": "npx",
+            "args": ["@browsermcp/mcp@latest"]
+        },
+        "context7": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@smithery/cli@latest",
+                "run",
+                "@upstash/context7-mcp",
+                "--key",
+                "585bad90-39a6-4cc0-b32c-8e3f5b2613de"
+            ]
+        },
+        "sequential-thinking": {
+            "command": "cmd",
+            "args": [
+                "/c",
+                "npx",
+                "-y",
+                "@smithery/cli@latest",
+                "run",
+                "@smithery-ai/server-sequential-thinking",
+                "--key",
+                "585bad90-39a6-4cc0-b32c-8e3f5b2613de"
+            ]
+        },
+        "mysql": {
+            "type": "stdio",
+            "command": "uvx",
+            "args": ["--from", "mysql-mcp-server", "mysql_mcp_server"],
+            "env": {
+                "MYSQL_HOST": "localhost",
+                "MYSQL_PORT": "10013",
+                "MYSQL_USER": "root",
+                "MYSQL_PASSWORD": "root",
+                "MYSQL_DATABASE": "local"
+            }
+        }
+    }
+}
