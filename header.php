@@ -1,11 +1,3 @@
-<?php
-//Redireciona para fozplaza.com.br
-if(!is_super_admin())
-{
-    header('Location: https://fozplaza.com.br');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html <?php language_attributes();?>>
 
