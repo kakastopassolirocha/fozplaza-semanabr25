@@ -1,0 +1,14 @@
+@use "helpers" as *;
+@use "tokens" as *;
+@use "sass:color";
+
+a.external-link::after
+{
+    display:inline-flex;
+    content: "\f08e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 85%;
+    margin-left: 2.5px;
+    text-decoration: none;
+}

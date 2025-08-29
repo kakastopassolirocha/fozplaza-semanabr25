@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - main
+      # - temp-branch
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+      
+      - name: 🔄 Install sshpass
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass
+
+      - name: 🔑 Add SSH key to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan ${{ secrets.SSH_IP }} >> ~/.ssh/known_hosts
+
+      - name: 📂 Sync files with rsync
+        run: |
+          sshpass -p '${{ secrets.SSH_PASSWORD }}' rsync -avz --delete \
+          ./ \
+          ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:/root/site_fozplaza_black/data/wp-content/themes/fozplazablack/

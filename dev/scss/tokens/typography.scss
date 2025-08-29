@@ -1,0 +1,87 @@
+@mixin font-tit{
+    font-family: "Fozplaza", sans-serif;
+}
+@mixin font-txt{
+    font-family: "Amiko", sans-serif;
+}
+
+@mixin font-body-regular{
+    font-family: "Amiko", sans-serif;
+    font-size: clamp(14px, calc(0.5vmin + 12px), 16px);
+    line-height:150%;
+}
+@mixin font-body-big{
+    font-family: "Amiko", sans-serif;
+    font-size: clamp(16px, calc(0.5vmin + 14px), 18px);
+    line-height: 150%;
+}
+
+@mixin font-menu{
+    font-family: "Fozplaza", sans-serif;
+    font-size:clamp(14px, calc(0.5vmin + 12px), 16px);
+    letter-spacing: 0.1px;
+    font-weight: 600;
+}
+
+
+@mixin font-caption()
+{
+    font-family: "Amiko", sans-serif;
+    font-size: clamp(12px, calc(0.4vmin + 10.8px), 14px);
+}
+
+@mixin font-overline()
+{
+    font-family: "Fozplaza", sans-serif;
+    font-size: clamp(12px, calc(0.4vmin + 10.8px), 14px);
+    letter-spacing: 0.3px;
+}
+
+// font-h1
+@mixin font-h1 {
+    font-family: "Fozplaza", sans-serif;
+    font-size: clamp(32px, calc(2.35vmin + 24.5px), 48px);
+}
+
+// font-h2
+@mixin font-h2 {
+    font-family: "Fozplaza", sans-serif;
+    font-size: clamp(28px, calc(1.76vmin + 22.35px), 40px);
+}
+
+// font-h3
+@mixin font-h3 {
+    font-family: "Fozplaza", sans-serif;
+    font-size: clamp(24px, calc(1.18vmin + 20.24px), 32px);
+}
+
+// font-h4
+@mixin font-h4 {
+    font-family: "Fozplaza", sans-serif;
+    font-size: clamp(20px, calc(0.88vmin + 18.24px), 28px);
+}
+
+// font-h5
+@mixin font-h5 {
+    font-family: "Fozplaza", sans-serif;
+    font-size: clamp(18px, calc(0.59vmin + 16.82px), 24px);
+}
+
+// font-h6
+@mixin font-h6 {
+    font-family: "Fozplaza", sans-serif;
+    font-size: clamp(16px, calc(0.47vmin + 15.5px), 20px);
+}
+
+// SIZES
+@mixin font-size-1{ font-size: clamp(9px, calc(0.3vmin + 8px), 11px); }
+@mixin font-size-2{ font-size: clamp(10px, calc(0.3vmin + 9px), 12px); }
+@mixin font-size-3{ font-size: clamp(12px, calc(0.4vmin + 10.8px), 14px); }
+@mixin font-size-4{ font-size: clamp(14px, calc(0.5vmin + 12px), 16px); }
+@mixin font-size-5{ font-size: clamp(16px, calc(0.5vmin + 14px), 18px); }
+@mixin font-size-6{ font-size: clamp(16px, calc(0.47vmin + 15.5px), 20px); }
+@mixin font-size-7{ font-size: clamp(18px, calc(0.59vmin + 16.82px), 24px); }
+@mixin font-size-8{ font-size: clamp(20px, calc(0.88vmin + 18.24px), 28px); }
+@mixin font-size-9{ font-size: clamp(24px, calc(1.18vmin + 20.24px), 32px); }
+@mixin font-size-10{ font-size: clamp(28px, calc(1.76vmin + 22.35px), 40px); }
+@mixin font-size-11{ font-size: clamp(32px, calc(2.35vmin + 24.5px), 48px); }

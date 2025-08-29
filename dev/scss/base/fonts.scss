@@ -1,0 +1,31 @@
+@use "tokens" as *;
+
+@font-face {
+    font-family: 'Fozplaza';
+    src: url('../fonts/fozplaza.woff2') format('woff2'),
+        url('../fonts/fozplaza.otf') format('opentype');
+    font-weight: normal;
+    /* 500 e 600 */
+    font-style: normal;
+}
+
+html {
+    font-size: clamp(14px, calc(0.5vmin + 12px), 16px);
+}
+body,
+input,
+textarea,
+button,
+select {
+    font-family: "Amiko", sans-serif;
+    letter-spacing:-0.3px;
+    color:$text-700;
+    font-weight: 400;
+    /* 400, 600 e 700 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Fozplaza", sans-serif;
+    /* 500, 600 */
+    font-weight: 600;
+}

@@ -1,0 +1,21 @@
+@use "helpers" as *;
+@use "tokens" as *;
+@use "sass:color";
+
+.btn-main
+{
+    @include font-menu();
+    text-transform: uppercase;
+    color:#222;
+    padding:8px 20px;
+    border-radius:32px;
+    outline: none;
+    background-color: color.adjust($yellow-500, $lightness: 15%);
+    transition:all 0.5s ease;
+
+    &:hover{
+        transform:scale(1.1);
+        background: color.adjust($yellow-500, $lightness: 25%) !important;
+        border-color: transparent;
+    }
+}

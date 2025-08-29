@@ -1,0 +1,119 @@
+@use "helpers" as *;
+@use "tokens" as *;
+@use "sass:color";
+
+footer{
+    padding:40px 0 8px;
+    text-align:center;
+    background-color: #000;
+
+    .container-screen
+    {
+        display:flex;
+        flex-wrap: wrap;
+        column-gap:80px;
+        row-gap: 40px;
+        align-items: center;
+        justify-content:space-evenly;
+
+        .logo a
+        {
+            display:block;
+            svg,img {
+                width:240px !important;
+                object-fit: contain !important;
+                -o-object-fit: contain !important;
+            }
+        }
+
+        .contatos
+        {
+            @include flex-col(start, start);
+            gap:16px;
+            text-align:left;
+
+            li
+            {
+                color:$white;
+                @include font-body-regular();
+                line-height:120%;
+
+                &:first-child > a, &:not(:first-child)
+                {
+                    @include flex(center, start);
+                    gap:8px;
+
+                    small
+                    {
+                        font-size:80%;
+                    }
+                }
+            }
+        }
+
+        .redes
+        {
+           @include flex-col(start, start);
+            gap:16px;
+            text-align:left;
+
+            li
+            {
+                color:$white;
+                @include font-body-regular();
+                line-height:120%;
+
+                @include flex(center, start);
+                gap:8px;
+            } 
+        }
+
+        @include responsive(860px)
+        {
+            justify-content:center;
+            >:first-child
+            {
+                flex:1 0 100%;
+                
+            }
+        }
+        @include responsive(530px)
+        {
+            justify-content: start;
+
+            .contatos
+            {
+                @include flex(center, center);
+                flex-wrap: wrap;
+                gap:20px;
+            }
+            .redes{
+                flex-grow: 1;
+                flex-direction: row;
+                @include flex(center, center);
+            }
+        }
+        @include responsive(400px)
+        {
+            .redes
+            {
+                flex-wrap: wrap;
+            }
+        }
+        @include responsive(380px)
+        {
+            .redes, .contatos
+            {
+                justify-content: start;
+            }
+        }
+    }
+
+    .cnpj{
+        margin-top:48px;
+        color:rgba(255, 255, 255, 0.7);
+        @include font-caption();
+        font-weight: 100;
+        @include px(20px);
+    }
+}

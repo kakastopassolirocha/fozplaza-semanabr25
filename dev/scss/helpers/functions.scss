@@ -1,0 +1,27 @@
+@use "sass:math";
+@function rem($px, $contexto: 16px) {
+    $rem: math.div($px, $contexto) * 1rem;
+    @return $rem;
+}
+
+@function z($name) {
+    @if index($z-indexes, $name) {
+        @return (length($z-indexes) - index($z-indexes, $name))+1;
+    }
+    @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}
+
+$z-indexes: (
+    "hamburger",
+    "menu",
+    "base",
+    "extra",
+    "countdown",
+    "home-hero-high",
+    "home-hero-faixas",
+    "home-hero-medium",
+    "home-hero-base"
+);

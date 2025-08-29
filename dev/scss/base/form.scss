@@ -1,0 +1,185 @@
+@use "helpers" as *;
+@use "tokens" as *;
+@use "sass:color";
+.input-box {
+    position: relative;
+    width: 100%;
+    input,
+    select {
+        width: 100%;
+        color: $text-900;
+        @include py(14px);
+        padding-inline: 12px;
+        background-color: $white;
+        border: 1px solid #b8b8b8;
+        border-radius: 8px;
+        transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        @include font-body-regular();
+        letter-spacing: 0.2px;
+        outline: none;
+        &:focus {
+            border: 1px solid $yellow-500;
+            outline: auto;
+            outline-color: $yellow-500;
+        }
+        &:is(:focus, :valid, .fixed-label) ~ label {
+            transform: translate(1px, -180%) scale(0.75);
+            background-color: $white;
+            border-radius:6px 6px 0 0;
+            padding: 4px 12px 0;
+            
+            color: $text-800;
+        }
+        &:valid:not(:focus) ~ label {
+            color: $text-800;
+        }
+    }
+    label {
+        @include font-caption();
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        color: $text-700;
+        white-space: nowrap;
+        pointer-events: none;
+        transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    //ERROS E SUCESSO
+    .input.error {
+        border-color: $orange-500;
+        border-width: 2px;
+        animation: shake-git 0.60s;
+        &~.error-msg {
+            display: flex;
+        }
+        // &.return-msg {
+        //     ~ .error-msg {
+        //         display: flex;
+        //     }
+        // }
+        & ~ .i-error {
+            display: block;
+        }
+        & ~ label {
+            color: $orange-500;
+        }
+    }
+    &.return-msg {
+        > .error-msg {
+            display: flex;
+        }
+    }
+    input.ok {
+        border-color: $yellow-500;
+        & ~ .i-ok {
+            display: block;
+        }
+    }
+    .i-ok,
+    .i-error {
+        display: none;
+    }
+    .i-ok::after {
+        content: "✓";
+        color: $yellow-500;
+        @include absolute(13px, 12px);
+    }
+    .i-error::after {
+        content: "✖";
+        color: $orange-500;
+        @include absolute(13px, 12px);
+    }
+    .error-msg {
+        @include font-caption();
+        @include font-size-2();
+        color: $orange-100;
+        white-space: nowrap;
+        @include absolute(null, null, -20px, 4px);
+        @include flex(center, flex-start);
+        display: none;
+        &::before {
+            content: "";
+            @include size(12px);
+            background: url("../svg/i-alert.svg") center center no-repeat;
+            background-size: contain;
+            margin-right: 4px;
+        }
+    }
+    //ÍCONES DE CAMPOS
+    &:has(input[class*="icon-"], select[class*="icon-"]) {
+        &::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 16px;
+            color: $text-500;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-48%);
+            left: 12px;
+            z-index: 1;
+        }
+        .input {
+            padding-inline: 40px 40px;
+        }
+        .input:not(:focus, :valid) ~ label {
+            left: 40px;
+        }
+    }
+    &:has(.icon-email)::before {
+        content: "\f0e0";
+    }
+    &:has(.icon-nome)::before {
+        content: "\f2bd";
+    }
+    &:has(.icon-phone)::before {
+        content: "\f10b";
+    }
+    &:has(.icon-room)::before {
+        content: "\f1ad";
+    }
+    &:has(.icon-adult)::before {
+        content: "\f007";
+    }
+    &:has(.icon-children)::before {
+        content: "\f1ae";
+    }
+} // .input-box
+// .group-inputs {
+//     @include flex(center, flex-start);
+//     gap: 8px;
+//     &:has(.ddd) {
+//         & > :first-child {
+//             width: 110px;
+//             @include responsive(540px) {
+//                 width: 78px;
+//             }
+//             > select {
+//                 width: 100%;
+//                 padding-inline-start: 24px;
+//                 -webkit-appearance: none;
+//                 /* Para o Safari */
+//                 -moz-appearance: none;
+//                 /* Para o Firefox */
+//                 appearance: none;
+//                 /* Padrão para outros navegadores */
+//                 padding-right: 30px;
+//                 /* Aumenta o padding à direita para afastar o texto (e a aparência da seta) da borda */
+//                 background-image: url("../svg/chevron-down.svg");
+//                 /* Opcional: substitui a seta padrão */
+//                 background-repeat: no-repeat;
+//                 background-position: right 10px center;
+//                 background-size: 20px;
+//                 /* Ajusta a posição da imagem de fundo (sua seta customizada) */
+//                 cursor: pointer;
+//             } // select
+//         }
+//         & > :last-child {
+//             flex: 1;
+//         }
+//     }
+// }
+
+/********************/
+
+

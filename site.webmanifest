@@ -1,0 +1,24 @@
+{
+  "name": "Foz Plaza Hotel Black Friday 2024",
+  "short_name": "Foz Plaza Black Friday",
+  "start_url" : "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/wp-content/themes/fozplazablack/dist/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/themes/fozplazablack/dist/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#111111",
+  "display": "standalone",
+  "orientation": "portrait"
+}

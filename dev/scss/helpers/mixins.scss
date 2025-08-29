@@ -1,0 +1,164 @@
+@mixin flex($align: null, $justify: null) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: row;
+    @if $align==null and $justify==null {
+        display: flex;
+    }
+    @if $align !=null {
+        align-items: $align;
+    }
+    @if $justify !=null {
+        justify-content: $justify;
+    }
+}
+
+@mixin flex-col($align: null, $justify: null) {
+    display: flex;
+    flex-direction: column;
+    align-items: $align;
+    justify-content: $justify;
+    @if $align==null and $justify==null {
+        display: flex;
+        flex-direction: column;
+    }
+    @if $align !=null {
+        align-items: $align;
+    }
+    @if $justify !=null {
+        justify-content: $justify;
+    }
+}
+
+@mixin flex-col-reverse($align: null, $justify: null) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: $align;
+    justify-content: $justify;
+    @if $align==null and $justify==null {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    @if $align !=null {
+        align-items: $align;
+    }
+    @if $justify !=null {
+        justify-content: $justify;
+    }
+}
+
+// Padding top and bottom
+@mixin py($top, $bottom: null) {
+    padding-top: $top;
+    @if $bottom !=null {
+        padding-bottom: $bottom;
+    }
+    @else {
+        padding-bottom: $top;
+    }
+}
+
+// Padding left and right
+@mixin px($left, $right: null) {
+    padding-left: $left;
+    @if $right !=null {
+        padding-right: $right;
+    }
+    @else {
+        padding-right: $left;
+    }
+}
+
+// Margin top and bottom
+@mixin my($top, $bottom: null) {
+    margin-top: $top;
+    @if $bottom !=null {
+        margin-bottom: $bottom;
+    }
+    @else {
+        margin-bottom: $top;
+    }
+}
+
+// Margin left and right
+@mixin mx($left, $right: null) {
+    margin-left: $left;
+    @if $right !=null {
+        margin-right: $right;
+    }
+    @else {
+        margin-right: $left;
+    }
+}
+
+@mixin max-w($value) {
+    width: 100%;
+    max-width: $value;
+}
+
+@mixin size($width, $height: false) {
+    $size: $width;
+    @if $height==false {
+        width: $size;
+        height: $size;
+    }
+    @else if $height !=false {
+        width: $width;
+        height: $height;
+    }
+}
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}
+
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: absolute;
+    @if $top !=null {
+        top: $top;
+    }
+    @if $right !=null {
+        right: $right;
+    }
+    @if $bottom !=null {
+        bottom: $bottom;
+    }
+    @if $left !=null {
+        left: $left;
+    }
+}
+
+// Limitar a extensão da largura de um texto e adicionar reticências
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin visibility($type) {
+    @if $type=='hide' {
+        pointer-events: none;
+        opacity: 0;
+    }
+    @else if $type=='show' {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
+
+@mixin shadows($shadow...) {
+    box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+}
+
+
+@mixin responsive($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
