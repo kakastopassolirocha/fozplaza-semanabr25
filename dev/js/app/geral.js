@@ -1,17 +1,16 @@
-const scrollAnimations = new ScrollAnimations();
-scrollAnimations.videoScrollPause('.video-scroll', '-200px');
-scrollAnimations.run();
+// const scrollAnimations = new ScrollAnimations();
+// scrollAnimations.videoScrollPause('.video-scroll', '-200px');
+// scrollAnimations.run();
 
 //Manipulando os SVG
 SVGInject.setOptions({
-    afterInject: function(img, svg) {
+    afterInject: function (img, svg) {
         // console.log(svg);
         let svgWidth = svg.getAttribute('width');
         let svgHeight = svg.getAttribute('height');
         // console.log(svgWidth, svgHeight);
 
-        if(svgWidth > 0)
-        {
+        if (svgWidth > 0) {
             // Remover atributos 'width' e 'height' para respeitar o CSS
             // svg.removeAttribute('width');
             // svg.removeAttribute('height');
@@ -26,7 +25,7 @@ SVGInject.setOptions({
 
 
 // Aguarda o DOM estar carregado para garantir que os elementos estão disponíveis
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     // Seleciona o body para adicionar e remover classes
     var body = document.body;
@@ -48,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //Coloca a rolagem no ponto zero e adiciona a classe "topScroll" ao body
     window.scrollTo(0, 0);
     body.classList.add("topScroll");
-    
+
     // Adiciona um listener para o evento de scroll da página
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
         // Verifica a quantidade de scroll vertical da página
         if (window.scrollY > 50) {
             // Se rolou mais de 50px, adiciona a classe 'inScroll' e remove 'topScroll'
@@ -65,18 +64,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Adiciona evento de clique para rolar suavemente até a âncora com -80px de diferença
     document.querySelectorAll('.scroll-link').forEach(link => {
-        link.addEventListener('click', function(event) {
+        link.addEventListener('click', function (event) {
             event.preventDefault();
 
             const targetId = this.getAttribute('href').substring(1);
 
-            if(targetId === 'cadastrar')
-            {
+            if (targetId === 'cadastrar') {
                 setTimeout(() => {
                     document.getElementById('nome').focus();
                 }, 500);
             }
-            
+
             // const targetElement = document.getElementById(targetId);
             const targetElement = document.querySelector(`.anchor-link[name="${targetId}"]`);
             if (targetElement) {
@@ -94,16 +92,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // * LOAD MORE GALERIA
     var showMoreBtn = document.getElementById('show-more');
-    showMoreBtn.addEventListener('click', function() {
+    showMoreBtn.addEventListener('click', function () {
         var hiddenItems = document.querySelectorAll('#gallery .foto.hidden');
-        hiddenItems.forEach(function(item) {
+        hiddenItems.forEach(function (item) {
             item.classList.remove('hidden');
         });
         showMoreBtn.style.display = 'none';
     });
 
-    if (body.classList.contains('page-template-tema-home-fase-1'))
-    {
+    if (body.classList.contains('page-template-tema-semana-brasil')) {
         // * COUNTDOWN
         function updateCountdown() {
             const countdownElement = document.getElementById('countdown-timer');
@@ -151,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // * ACCORDION
 const toggleItem = (element) => {
     const headers = document.querySelectorAll(".accordions header");
-    
+
     if (element.classList.contains("active")) {
         element.classList.remove("active");
         element.nextElementSibling.style.height = "0px";
@@ -172,8 +169,8 @@ const toggleItem = (element) => {
     content.style.height = `${text.clientHeight}px`;
 }
 
-(function($) {
-    $(document).ready(function() {
+(function ($) {
+    $(document).ready(function () {
         // * GALERIA DE IMAGENS
         new jBox('Image', {
             imageCounter: true,

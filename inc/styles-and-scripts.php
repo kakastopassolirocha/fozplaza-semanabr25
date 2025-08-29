@@ -1,6 +1,6 @@
 <?php
 add_action( 'wp_enqueue_scripts', function(){
-    wp_enqueue_style('fozplaza', THEMEROOT_DIST .'css/fozplaza-bf-css.min.css', [], '1.0.0');
+    wp_enqueue_style('fozplaza', THEMEROOT_DIST .'css/fozplaza-css.min.css', [], '1.0.0');
 
     // Trata e comprime SVG em uma tag de <img>
     wp_enqueue_script( 'svg-inject', THEMEROOT_DIST . 'js/libs/svg-inject.min.js', [], '1.2.3', false);
@@ -9,7 +9,9 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_script( 'scroll-animations', THEMEROOT_DIST . 'js/libs/scrollAnimations.min.js', [], '1.0.0', false);
         
     // Main.js
-    wp_enqueue_script( 'fozplaza', THEMEROOT_DIST . 'js/app/fozplaza-bf-js.min.js', ['jquery'], '1.0.0', true);
+    wp_enqueue_script('alpine-intersect', 'https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js', [], '3.x.x', true);
+    wp_enqueue_script('alpine-js', THEMEROOT_DIST . 'js/libs/alpine.min.js', ['alpine-intersect'], '3.14.8', true);
+    wp_enqueue_script( 'fozplaza', THEMEROOT_DIST . 'js/app/fozplaza-js.min.js', ['jquery', 'alpine-js'], '1.0.0', true);
     wp_localize_script('fozplaza', 'backvars', [
         'ajax_url' => admin_url('admin-ajax.php'),
         'dist' => THEMEROOT_DIST,
