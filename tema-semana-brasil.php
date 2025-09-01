@@ -37,14 +37,14 @@ get_header();
                 <img src="<?=THEMEROOT_DIST?>svg/logo-fozplaza_white.svg" alt="Foz Plaza Hotel"
                     onload="SVGInject(this)">
             </h1> -->
-            <h2 class="logo-black flex justify-center relative">
-                <img class="logo-img w-[520px]"
+            <h2 class="flex justify-center relative">
+                <img class="logo-img w-[300px] sm:w-[420px] lg:w-[480px]"
                     src="<?=THEMEROOT_DIST?>svg/semana-brasil_sem-arara.svg" alt="Semana Brasil 2025 - 15% OFF" />
-                <img class="absolute transform translate-x-56 translate-y-14 arara-flying"
+                <img class="absolute transform w-[100px] translate-x-32 translate-y-12 sm:w-auto sm:translate-x-48 lg:translate-x-56 lg:translate-y-14 arara-flying"
                     src="<?=THEMEROOT_DIST?>img/arara.png" alt="Arara - Cataratas do Iguaçu - Foz do Iguaçu" />
             </h2>
             <div class="flex justify-center !mt-16">
-                <img class="w-[320px]"
+                <img class="w-[240px] lg:w-[320px]"
                     src="<?=THEMEROOT_DIST?>img/periodo-de-vendas.png" alt="Vendas de 05 a 11 de Setembro" />
             </div>
         </div><!-- .content -->
@@ -77,18 +77,17 @@ get_header();
     <a name="cadastrar" class="anchor-link" data-scroll-offset="70"></a>
 </section><!-- .countdown -->
 
-<article class="participe">
+<article class="participe bg-brazul">
     <div class="container-screen padding-x">
-        <h6 class="overline-item">🚨 Serão apenas 350 reservas</h6>
+        <h6 class="overline-item !px-4 !text-lg">🚨 Serão apenas 350 reservas</h6>
         <h2 class="tit">Fique de olho, não perca!</h2>
-        <h3 class="sub"><strong>Cadastre-se para participar</strong> e receber o código secreto<br>para a <strong>maior
-                promoção
-                da história!</strong>
+        <h3 class="sub"><strong>Consulte tarifas e faça reservas</strong> aqui mesmo nessa página durante o período de vendas, anote aí:<br>
+            <strong>De 05 a 15 de Setembro de 2025</strong>
         </h3>
     </div><!-- .container-screen -->
 </article><!-- participe -->
 
-<article class="vantagens">
+<article class="vantagens !pb-32">
     <a name="motivos" class="anchor-link" data-scroll-offset="120"></a>
     <div class="container-screen padding-x">
         <h6 class="overline-section">Porque você não pode perder?</h6>
@@ -97,8 +96,8 @@ get_header();
             <div class="box">
                 <img class="icon-item" src="<?=THEMEROOT_DIST?>svg/i_desconto.svg" alt="Vantagem"
                     onload="SVGInject(this)">
-                <h3 class="tit-item"><strong>O MAIOR DESCONTO</strong> DA HISTÓRIA</h3>
-                <p>Serão <strong>até 40% OFF em tarifas</strong> para hospedagens válidas até Dezembro de 2025.</p>
+                <h3 class="tit-item"><strong class="bg-bramarelo !p-1 !text-gray-900 rounded-sm">15% OFF</strong> ATÉ DEZEMBRO!</h3>
+                <p>Serão <strong>15% OFF em tarifas</strong> para hospedagens válidas até Dezembro de 2025.</p>
             </div>
             <div class="box">
                 <img class="icon-item" src="<?=THEMEROOT_DIST?>svg/i_desconto.svg" alt="Vantagem"
@@ -130,7 +129,7 @@ get_header();
                     REMARCAÇÃO <strong>FLEXÍVEL</strong>
                     <a href="#condicoes" class="scroll-link">*</a>
                 </h3>
-                <p><strong>Você aproveita o precinho da Black agora</strong>, mas se precisar mudar depois, é só ajustar
+                <p><strong>Você aproveita o precinho</strong>, mas se precisar mudar depois, é só ajustar
                     de acordo com o
                     novo período e tarifa escolhida!</p>
             </div>
@@ -149,13 +148,13 @@ get_header();
                 <img class="icon-item" src="<?=THEMEROOT_DIST?>svg/i_tripadvisor.svg" alt="Vantagem"
                     onload="SVGInject(this)">
                 <h3 class="tit-item">TRAVELLER'S <strong>CHOICE</strong></h3>
-                <p>É a oportunidade perfeita para você curtir um dos hotéis de Foz do Iguaçu <strong>mais bem avaliados
+                <p>Oportunidade para você curtir um dos hotéis de Foz do Iguaçu mais bem avaliados
                         no
-                        TripAdvisor!</strong></p>
+                        TripAdvisor. <strong>Eleito entre os TOP 10% melhores hotéis do mundo!</strong></p>
             </div>
         </section><!-- . vantagens-box -->
 
-        <a href="#cadastrar" class="btn-main scroll-link">Cadastre-se e participe!</a>
+        <!-- <a href="#cadastrar" class="btn-main scroll-link">Cadastre-se e participe!</a> -->
     </div><!-- .container-screen -->
 </article><!-- .vantagens -->
 
@@ -185,7 +184,7 @@ get_header();
             endif;
             ?>
         </div><!-- #gallery -->
-        <button id="show-more" class="btn-more"><strong>+</strong> fotos</button>
+        <button id="show-more" class="btn-more"><strong class="!rounded-full">+</strong> FOTOS</button>
     </div><!-- .container-screen -->
 </article><!-- o-hotel -->
 
@@ -202,21 +201,18 @@ get_header();
                 </header>
                 <div>
                     <p>
-                        É simples! Basta se cadastrar com seu e-mail e WhatsApp no formulário desta página e ficar
-                        atento às nossas mensagens. Enviaremos seu cupom de desconto na data de abertura das
-                        vendas! (25/Nov)
+                        É simples! Do dia 05 ao dia 15 de Setembro basta entrar nessa página para fazer suas consultas de tarifas e suas reservas. Todas as tarifas até Dezembro de 2025 estarão com o desconto de 15% OFF aplicado. Mas fique ligado, pois algumas datas podem ter disponibilidade limitada, e serã apenas 350 reservas com esse desconto especial.
                     </p>
                 </div>
             </div>
             <div class="item">
                 <header onClick="toggleItem(this)">
-                    <h2>Quando será as vendas?</h2>
+                    <h2>Quando serão as vendas?</h2>
                     <span class="material-symbols-outlined"><i class="fas fa-chevron-down"></i></span>
                 </header>
                 <div>
                     <p>
-                        As vendas ocorrerão de 25 de novembro a 1º de dezembro de 2024. Enviaremos o link da página de
-                        vendas, junto com o cupom de desconto, para que você possa fazer sua reserva!
+                        As vendas ocorrerão de 05 de Setembro a 15 de Setembro de 2025, aqui mesmo nessa página.
                     </p>
                 </div>
             </div>
@@ -235,27 +231,24 @@ get_header();
             </div>
             <div class="item">
                 <header onClick="toggleItem(this)">
-                    <h2>Onde está meu cupom de desconto?</h2>
+                    <h2>Preciso de cupom de desconto?</h2>
                     <span class="material-symbols-outlined"><i class="fas fa-chevron-down"></i></span>
                 </header>
                 <div>
                     <p>
-                        Após se cadastrar no formulário desta página, você receberá uma confirmação do seu cadastro. No
-                        período de vendas da campanha, enviaremos o código secreto do desconto para o seu e-mail e
-                        WhatsApp, para que você possa utilizá-lo.
+                        Não, durante o período de vendas da campanha, todas as tarifas disponíveis para reservas
+                        até Dezembro de 2025 já estarão com o desconto de 15% OFF aplicado automaticamente.
                     </p>
                 </div>
             </div>
             <div class="item">
                 <header onClick="toggleItem(this)">
-                    <h2>Por que não recebi 40% de desconto?</h2>
+                    <h2>É o melhor preço que vou conseguir?</h2>
                     <span class="material-symbols-outlined"><i class="fas fa-chevron-down"></i></span>
                 </header>
                 <div>
                     <p>
-                        Os descontos variam de acordo com as datas escolhidas. Fique atento, pois algumas datas possuem
-                        descontos diferentes. Nossa equipe pode auxiliar a encontrar a melhor data e preço, entre em
-                        contato conosco.
+                        Sim! É o melhor preço de nossas tarifas que vai conseguir para reservas até Dezembro de 2025!
                     </p>
                 </div>
             </div>
@@ -266,7 +259,7 @@ get_header();
                 </header>
                 <div>
                     <p>
-                        Sim! Nossa equipe de recreação está disponível às sextas, sábados e feriados, garantindo
+                        Sim! Nossa equipe de recreação está disponível às sextas, sábados e feriados, e durante o mês de Dezembro inteiro, garantindo
                         diversão para toda a família.
                     </p>
                 </div>

@@ -133,6 +133,8 @@ header.header-home {
         //.tools
 
         @include responsive(768px) {
+            justify-content: center;
+
             nav.menu {
                 display: none;
             }

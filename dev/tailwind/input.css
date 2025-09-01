@@ -1,5 +1,39 @@
 @import "tailwindcss";
 
+@theme {
+    --font-size-base: clamp(14px, calc(0.5vmin + 12px), 16px);
+
+    --color-primary-50: #b3ccd2;
+    --color-primary-100: #99bbc3;
+    --color-primary-200: #6698a5;
+    --color-primary-300: #4d8796;
+    --color-primary-400: #1a6578;
+    --color-primary-500: #005469;
+    --color-primary-600: #004c5f;
+    --color-primary-700: #004354;
+    --color-primary-800: #003b4a;
+    --color-primary-900: #002a35;
+
+    --color-secondary-50: #e6f5f0;
+    --color-secondary-100: #cce8e0;
+    --color-secondary-200: #99d1c0;
+    --color-secondary-300: #66b9a0;
+    --color-secondary-400: #33a280;
+    --color-secondary-500: #53c086;
+    --color-secondary-600: #4bad79;
+    --color-secondary-700: #439a6c;
+    --color-secondary-800: #3b8760;
+    --color-secondary-900: #2a6548;
+
+    --color-azul-links: #007AFF;
+
+    /* Cores da campanha */
+    --color-bramarelo: #fdc406;
+    --color-brverde: #5a8933;
+    --color-brazul: #0279d8;
+
+}
+
 /* Animação suave para a arara (tucano) - voando no próprio espaço sem sair da área
 	 - keyframes 'arara-fly' usa pequenas traduções em X e Y e uma leve rotação
 	 - classe utilitária .arara-flying aplica a animação e mantém transform-origin no centro

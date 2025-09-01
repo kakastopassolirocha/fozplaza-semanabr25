@@ -26,4 +26,4 @@ jobs:
         run: |
           sshpass -p '${{ secrets.SSH_PASSWORD }}' rsync -avz --delete \
           ./ \
-          ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:/root/site_fozplaza_black/data/wp-content/themes/fozplazablack/
+          ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:/root/site_fozplaza_semanabr25/data/wp-content/themes/fozplaza-semanabr25/
